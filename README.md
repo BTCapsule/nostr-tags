@@ -2,7 +2,7 @@
 
 Nostr-tags lets you use NIP-21 format to tag profiles and embed notes on your HTML.
 
-To use nostr-tags, add the following script to the bottom of your <body> tag:
+To use nostr-tags, add the following script to the bottom of your `<body>` tag:
 	
 `<script src= "https://cdn.jsdelivr.net/gh/btcapsule/nostr-tags@latest/nostr-tags.js"></script>`
 	
