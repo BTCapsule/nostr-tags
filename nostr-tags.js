@@ -9,14 +9,33 @@ function loadNostrToolsScript() {
     });
 }
 
-function launchClient(link) {
 
 
-
-    window.location.href = 'https://snort.social/' + link;
-
+	function launchClient(link) {
+		
+		if (link[0] == "h"){
+			console.log(link[0])
+			window.location.href = link
+		} else{
+		
+  var fallbackLink = 'https://snort.social/' + link;
+  var fallbackTimeout = setTimeout(function() {
+    document.location.assign(fallbackLink);
+  }, 4000);
+  var damus = window.location.href = 'damus://' + link;
+	console.log(damus)
+  setTimeout(function() {
+    window.location.href = 'nostr://' + link;
+  }, 2000); 
+  window.onblur = function() {
+    clearTimeout(fallbackTimeout);
+  };
+	
+}	
 
 }
+
+
 
 async function processBodyContent() {
     await loadNostrToolsScript();
